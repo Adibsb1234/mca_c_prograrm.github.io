@@ -47,18 +47,11 @@ void push(struct Stack* stack, char op)
 }
  
  
-// A utility function to check if
-// the given character is operand
-int isOperand(char ch)
 {
     return (ch >= 'a' && ch <= 'z') ||
            (ch >= 'A' && ch <= 'Z');
 }
- 
-// A utility function to return
-// precedence of a given operator
-// Higher returned value means
-// higher precedence
+
 int Prec(char ch)
 {
     switch (ch)
@@ -78,15 +71,12 @@ int Prec(char ch)
 }
  
  
-// The main function that
-// converts given infix expression
-// to postfix expression.
+
 int infixToPostfix(char* exp)
 {
     int i, k;
  
-    // Create a stack of capacity
-    // equal to expression size
+    
     struct Stack* stack = createStack(strlen(exp));
     if(!stack) // See if stack was created successfully
         return -1 ;
